@@ -185,7 +185,7 @@ sub cal_kaks{
 			#&run_cmd("clustalw2 -INFILE=$prefix.pep.fasta -PWMATRIX=BLOSUM -TYPE=PROTEIN -OUTPUT=FASTA -OUTFILE=$prefix.pep.aln > $prefix.clustalw2.out");
 			&run_cmd("mafft --localpair --maxiterate 1000 --quiet $prefix.pep.fasta >$prefix.pep.aln");
 			&run_cmd("pal2nal.pl $prefix.pep.aln $prefix.cds.fasta -output fasta > $prefix.coding.aln");
-			&run_cmd("perl parseFastaIntoAXT.pl $prefix.coding.aln > $prefix.parseFastaIntoAXT.out");
+			&run_cmd("parseFastaIntoAXT.pl $prefix.coding.aln > $prefix.parseFastaIntoAXT.out");
 			#system "KaKs_Calculator -i $prefix.coding.aln.axt -m YN -o $prefix.coding.aln.kaks > $prefix.KaKs_Calculator.out";
 			die "ERROR -- $prefix.pep.aln -- File size is zero!!!" unless -s "$prefix.coding.aln";
 

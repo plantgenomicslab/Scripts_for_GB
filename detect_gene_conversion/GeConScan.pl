@@ -121,12 +121,12 @@ sub format_cds()
 	system "rm -f $abr.cds.temp";
 }
 system 'mkdir cds';
-system "perl split.fasta.pl $ARGV[0].cds.formatted cds";
-system "perl split.fasta.pl $ARGV[1].cds.formatted cds";
+system "split.fasta.pl $ARGV[0].cds.formatted cds";
+system "split.fasta.pl $ARGV[1].cds.formatted cds";
 system "rm -f $ARGV[0].cds.formatted $ARGV[1].cds.formatted";
 ##################### detecting gene conversion events
 my $out = $ARGV[0]."_$ARGV[1].homologous.quartets";
-system "perl calculate.K.quartet.genes.CV.BP.all.pl $out $ARGV[0] $ARGV[1]";
+system "calculate.K.quartet.genes.CV.BP.all.pl $out $ARGV[0] $ARGV[1]";
 open IN, "$ARGV[0]_$ARGV[1].homologous.quartets.K.CV.BP.txt";
 open OUT, ">$ARGV[0]_$ARGV[1].quartets.K.CV.BP.txt";
 print OUT "Note:	".$ARGV[0]."-1 and ".$ARGV[0]."-2 show two ".$ARGV[0]." paralogous genes, ".$ARGV[1]."-1 and ".$ARGV[1]."-2 show two ".$ARGV[1]." paralogous genes\n";

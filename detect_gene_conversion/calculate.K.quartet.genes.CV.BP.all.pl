@@ -1,10 +1,10 @@
-#!usr/bin/perl
-
-# Developed by Dr. Xiyin Wang
-# Revised by Xin Qiao, 12/29/2016
+#!/usr/bin/perl
 
 use warnings;
 use strict;
+
+# Developed by Dr. Xiyin Wang
+# Revised by Xin Qiao, 12/29/2016
 
 use Bio::SeqIO;
 use Bio::Align::Utilities qw(aa_to_dna_aln);

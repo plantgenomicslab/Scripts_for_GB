@@ -65,7 +65,7 @@ for(my $count = 0; $count < @contents; $count++){
 		$out->write_seq($seq);
 	}
 	$out->close;
-	system "perl fa_prepareDATA4_kaks_calculator.pl $out_pre.fasta > $out_pre.axt";
+	system "fa_prepareDATA4_kaks_calculator.pl $out_pre.fasta > $out_pre.axt";
 }
 
 #my ($sp) = ($gene_file =~ /^(\S+?)\./);
